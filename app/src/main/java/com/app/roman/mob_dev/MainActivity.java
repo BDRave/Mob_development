@@ -11,7 +11,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public EditText etName;
     TextView textWithName;
-    Button clearText, sayHello;
+    Button clearText;
+    Button sayHello;
     public String name;
 
     @Override
@@ -32,18 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) { // switch to conrol clicks between two different buttons
+        switch (v.getId()) {
             case R.id.clearText:
                 etName.getText().clear();
                 break;
             case R.id.sayHello:
-                textWithName.setText("Hello, " + etName.getText().toString());// output our congratulation
+                textWithName.setText("Hello, " + etName.getText().toString());
                 etName.getText().clear();
         }
-    }
-
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
     }
 }

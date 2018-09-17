@@ -22,7 +22,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
             android:ems="10"
-            android:hint="Input your name"
+            android:hint="@string/InputName"
             android:inputType="textPersonName"
             android:layout_marginLeft="15dp"
             android:layout_alignParentLeft="true" />
@@ -42,7 +42,7 @@
             android:layout_alignBottom="@+id/etName"
             android:layout_marginStart="24dp"
             android:layout_toEndOf="@+id/etName"
-            android:text="Clear"
+            android:text="@string/Clear"
             android:layout_marginLeft="24dp"
             android:layout_toRightOf="@+id/etName" />
 
@@ -50,11 +50,13 @@
             android:id="@+id/sayHello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/clearText"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="39dp"
-            android:text="Say Hello :)" />
+            android:text="@string/SayHello"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp" />
 
         <TextView
             android:id="@+id/textWithName"
@@ -66,6 +68,8 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:text=""
-            android:layout_alignRight="@+id/etName" />
+            android:layout_alignRight="@+id/etName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
