@@ -1,7 +1,6 @@
 package com.app.roman.mob_dev;
 
-import android.content.Context;
-import android.content.Intent;
+
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +8,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class RegForm extends AppCompatActivity implements View.OnClickListener {
 
@@ -55,25 +49,25 @@ public class RegForm extends AppCompatActivity implements View.OnClickListener {
         if (!Validations.isValidPassword(passwordText) || !Validations.isValidPassword(confPassText) || !passwordText.equals(confPassText) ||
                 !Validations.isValidPhoneNumber(phoneText) || !Validations.isValidEmail(emailText)) {
             if (!Validations.isValidFirstName(firstNameText)) {
-                firstName.setError("Більше одного символа");
+                firstName.setError("Bad First name");
             }
             if (!Validations.isValidLastName(lastNameText)) {
-                lastName.setError("Більше одного символа");
+                lastName.setError("Bad Last Name");
             }
             if (!Validations.isValidEmail(emailText)) {
-                email.setError("Неправильний емейл");
+                email.setError("Invalid email");
             }
             if (!Validations.isValidPhoneNumber(phoneText)) {
-                phone.setError("Перевірте чи правильно введено телефон");
+                phone.setError("Bad phone number");
             }
             if (!Validations.isValidPassword(passwordText)) {
-                password.setError("8+ символів");
+                password.setError("invalid password");
             }
             if (!Validations.isValidPassword(confPassText)) {
-                confirmPassword.setError("8+ символів");
+                confirmPassword.setError("Do not match");
             }
             if (!passwordText.equals(confPassText)) {
-                confirmPassword.setError("Паролі повинні співпадати");
+                confirmPassword.setError("Do not match");
             }
         }
     }
