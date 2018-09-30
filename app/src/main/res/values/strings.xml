@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Mob_dev</string>
+    <string name="Clear">Clear</string>
+    <string name="SayHello">Say Hello</string>
+    <string name="InputName">Input your name</string>
+    <string name="Hello">Hello</string>
+    <string name="Email_hint">Email</string>
+    <string name="Phone">Phone</string>
+    <string name="Password_hint">Password</string>
+    <string name="First_name_hint">First name</string>
+    <string name="Last_name_hint">First name</string>
+    <string name="Confirm_password_hint">Confirm Password</string>
 </resources>

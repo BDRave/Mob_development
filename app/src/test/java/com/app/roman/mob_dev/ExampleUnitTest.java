@@ -1,4 +1,4 @@
-package com.example.roman.myapplication;
+package com.app.roman.mob_dev;
 
 import org.junit.Test;
 
