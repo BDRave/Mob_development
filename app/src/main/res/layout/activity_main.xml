@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.app.roman.mob_dev.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,18 +21,19 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="15dp"
             android:layout_marginTop="30dp"
+            android:background="@drawable/etname_focused_state"
             android:ems="10"
-            android:hint="@string/InputName"
+            android:hint="Input your name"
             android:inputType="textPersonName"
-            android:layout_marginLeft="15dp"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp" />
 
         <EditText
             android:id="@+id/edt_thief"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:focusable="true"
-            android:focusableInTouchMode="true" />
+            android:focusableInTouchMode="true"/>
 
         <Button
             android:id="@+id/clearText"
@@ -42,7 +43,7 @@
             android:layout_alignBottom="@+id/etName"
             android:layout_marginStart="24dp"
             android:layout_toEndOf="@+id/etName"
-            android:text="@string/Clear"
+            android:text="Clear"
             android:layout_marginLeft="24dp"
             android:layout_toRightOf="@+id/etName" />
 
@@ -50,13 +51,11 @@
             android:id="@+id/sayHello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/clearText"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="39dp"
-            android:text="@string/SayHello"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15dp" />
+            android:layout_below="@+id/clearText"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="39dp"
+            android:text="Say Hello :)"/>
 
         <TextView
             android:id="@+id/textWithName"
@@ -68,8 +67,16 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:text=""
-            android:layout_alignRight="@+id/etName"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp" />
+            android:layout_alignRight="@+id/etName" />
+
+        <Button
+            android:id="@+id/nextLabButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textWithName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="93dp"
+            android:text="Go to Lab2"/>
     </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
