@@ -15,11 +15,6 @@ import com.app.roman.mob_dev.CustomListView.DataModel;
 
 import java.util.ArrayList;
 
-/**
- * Created by Zava on 06.09.2018.
- */
-
-
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.RecViewHolder> {
 
     private ArrayList<DataModel> alist;
