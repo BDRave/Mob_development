@@ -1,4 +1,4 @@
-package com.example.roman.myapplication;
+package com.app.roman.mob_dev;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.roman.myapplication", appContext.getPackageName());
+        assertEquals("com.app.roman.mob_dev", appContext.getPackageName());
     }
 }
