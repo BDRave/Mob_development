@@ -15,6 +15,9 @@
     </string>
     <string name="badFirtsname">Введіть більше одного символа</string>
     <string name="badLastname">Введіть більше одного символа</string>
+    <string name="no_data">No_Data</string>
+    <string name="unsuccessful_response">unsuccessful_response</string>
+    <string name="successful_response">successful_response</string>
     <string name="badEmail">Введіть правильний емейл</string>
     <string name="badPhone">Неправильний формат вводу мобільного телефону</string>
     <string name="badPassword">Введіть більше 7 символів</string>
