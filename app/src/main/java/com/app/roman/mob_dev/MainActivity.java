@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call <List<Hero>> call, Throwable throwable) {
                 Toast.makeText(MainActivity.this, R.string.unsuccessful_response
                         + throwable.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+            }..f
         });
     }
 
