@@ -34,7 +34,7 @@ android:
 deploy:
   provider: releases
   api_key:
-    secure: "Lab9"
+    secure: "f7a2fb46e92677b0bcab800d08a113b0308a2fae"
   file: "app/build/outputs/apk/debug/app-debug.apk"
   skip_cleanup: true
   on:
