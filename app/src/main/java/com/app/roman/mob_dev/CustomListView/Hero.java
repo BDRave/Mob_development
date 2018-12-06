@@ -1,4 +1,4 @@
-package com.app.roman.mob_dev;
+package com.app.roman.mob_dev.CustomListView;
 
 
 public class Hero {
@@ -12,7 +12,9 @@ public class Hero {
     private String imageurl;
     private String bio;
 
-    public Hero(String name, String realname, String team, String firstappearance, String createdby, String publisher, String imageurl, String bio) {
+    public Hero(String name, String realname, String team,
+                String firstappearance, String createdby,
+                String publisher, String imageurl, String bio) {
         this.name = name;
         this.realname = realname;
         this.team = team;

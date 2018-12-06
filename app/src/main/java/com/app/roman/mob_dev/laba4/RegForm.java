@@ -1,4 +1,4 @@
-package com.app.roman.mob_dev;
+package com.app.roman.mob_dev.laba4;
 
 
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.app.roman.mob_dev.R;
 
 public class RegForm extends AppCompatActivity {
 
@@ -22,7 +24,6 @@ public class RegForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reg_form);
         initFields();
     }
 
@@ -70,14 +71,6 @@ public class RegForm extends AppCompatActivity {
     }
 
     public void initFields() {
-        firstName = findViewById(R.id.firstNameEt);
-        lastName = findViewById(R.id.lastNameEt);
-        phone = findViewById(R.id.phoneEt);
-        email = findViewById(R.id.emailEt);
-        password = findViewById(R.id.passwordEt);
-        confirmPassword = findViewById(R.id.passwordConfirmEt);
-        submitButton = findViewById(R.id.submitButton);
-        nextLabButton = findViewById(R.id.btn_change_act);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
