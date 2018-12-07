@@ -4,7 +4,6 @@ before_script:
   - echo yes | sdkmanager "build-tools;27.0.3"
   - chmod +x gradlew
 script:
-  - ./gradlew connectedAndroidTest
   - ./gradlew assembleDebug
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
