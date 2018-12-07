@@ -1,58 +1,77 @@
 package com.app.roman.mob_dev;
 
-import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.app.roman.mob_dev.Adapter.HeroAdapter;
+import com.app.roman.mob_dev.CustomListView.Hero;
+
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public EditText etName;
-    TextView textWithName;
-    Button clearText, sayHello,nextLabButton;
+public class MainActivity extends AppCompatActivity {
     public String name;
+    @BindView(R.id.list_photos)
+    protected RecyclerView recyclerView;
+    public TextView noData;
+    @BindView(R.id.swipeContainer)
+    protected SwipeRefreshLayout swipeContainer;
+    private HeroAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("Hello World :)");
-
-        etName = findViewById(R.id.etName);
-        textWithName = findViewById(R.id.textWithName);
-        clearText = findViewById(R.id.clearText);
-        sayHello = findViewById(R.id.sayHello);
-        nextLabButton = findViewById(R.id.nextLabButton);
-
-        nextLabButton.setOnClickListener(this);
-        sayHello.setOnClickListener(this);
-        clearText.setOnClickListener(this);
-
+        ButterKnife.bind(this);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                makeCall();
+                swipeContainer.setRefreshing(false);
+            }
+        });
+        makeCall();
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) { // switch to conrol clicks between two different buttons
-            case R.id.clearText:
-                etName.getText().clear();
-                break;
-            case R.id.sayHello:
-                textWithName.setText("Hello, " + etName.getText().toString());// output our congratulation
-                etName.getText().clear();
-                break;
-            case R.id.nextLabButton:
-                Intent intent = new Intent(this, RegForm.class);
-                this.startActivity ( intent );
-                break;
-        }
+    public void makeCall() {
+        Call<List<Hero>> call = RetrofitClient.getApiService().getHeroes();
+        call.enqueue(new Callback<List<Hero>>() {
+            @Override
+            public void onResponse(Call <List<Hero>> call, Response<List<Hero>> response) {
+                Toast.makeText(MainActivity.this, R.string.successful_response,
+                        Toast.LENGTH_LONG).show();
+                if (response.body() == null) {
+                    noData.setText("No Data");
+                } else {
+                    List<Hero> hits = response.body();
+                    setAdapter(hits);
+                }
+            }
+
+            @Override
+            public void onFailure(Call <List<Hero>> call, Throwable throwable) {
+                Toast.makeText(MainActivity.this, R.string.unsuccessful_response
+                        + throwable.getMessage(), Toast.LENGTH_SHORT).show();
+            } 
+        });
     }
 
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
+    public void setAdapter(List <Hero> data) {
+        adapter = HeroAdapter.getHeroAdapter();
+        adapter.loadData(data);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 }
-

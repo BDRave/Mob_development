@@ -1,4 +1,4 @@
-package com.app.roman.mob_dev;
+package com.app.roman.mob_dev.laba4;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,10 +10,8 @@ import android.support.v7.widget.*;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 
 
-import com.app.roman.mob_dev.CustomListView.CustomAdapter;
 import com.app.roman.mob_dev.CustomListView.DataModel;
 
 import java.util.ArrayList;
@@ -24,15 +22,12 @@ public class RegFormDataActivity extends AppCompatActivity {
 
     private Button btn_print_info;
     private ArrayList<DataModel> users = new ArrayList<>();
-    ;
     private RecyclerView recyclerView;
-    private CustomAdapter adapter;
     private LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reg_form_data);
         init();
     }
 
@@ -45,8 +40,6 @@ public class RegFormDataActivity extends AppCompatActivity {
     }
 
     private void init() {
-        btn_print_info = findViewById(R.id.btn_print_info);
-        recyclerView = findViewById(R.id.rv_info);
         load_from_pref();
         mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
@@ -54,10 +47,8 @@ public class RegFormDataActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                adapter = new CustomAdapter(users);
                 recyclerView.setLayoutManager(mLayoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
-                recyclerView.setAdapter(adapter);
             }
         });
     }
