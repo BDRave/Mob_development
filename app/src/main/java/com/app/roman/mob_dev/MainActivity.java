@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) { // switch to conrol clicks between two different buttons
+        switch (v.getId()) {
             case R.id.clearText:
                 etName.getText().clear();
                 break;
