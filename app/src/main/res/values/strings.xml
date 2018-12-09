@@ -28,4 +28,11 @@
     <string name="password">Password</string>
     <string name="password_confirmation">Password confirmation</string>
     <string name="show_users">Show users</string>
+    <string name="grid_2">2 columns</string>
+    <string name="grid_3">3 columns</string>
+    <string name="grid_4">4 columns</string>
+    <string name="search">Search</string>
+    <string name="enter_text">Enter text here</string>
+
+    <string name="loading">Getting images...</string>
 </resources>
